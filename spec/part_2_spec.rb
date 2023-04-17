@@ -24,8 +24,9 @@ describe "Part 2:" do
       end
     end
 
-    it "should not use String#reverse" do
+    it "should not use String#reverse or Array#reverse" do
       expect_any_instance_of(String).to_not receive(:reverse)
+      expect_any_instance_of(Array).to_not receive(:reverse)
       palindrome?("tot")
     end
   end
